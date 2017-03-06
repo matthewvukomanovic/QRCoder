@@ -58,8 +58,6 @@ namespace QRCoder
                     matrix[i][j] = new Runs();
                 }
             }
-            ;
-
 
             var start = drawQuietZones ? 0 : 4;
             var end = drawQuietZones ? modMatrix.Count : modMatrix.Count - 4;
@@ -134,9 +132,9 @@ namespace QRCoder
                     }
 
                         //svgFile.AppendLine(@"<text x=""" + (xOffset + (unitsPerModule / 2) )+ @""" y=""" + (yOffset + (unitsPerModule / 2)) + @""" width=""" + unitsPerModule + @""" height=""" + unitsPerModule + @""" fill=""black"" text-anchor=""middle"" font-size=""5px"">" + run.GetValues() + "</text>");
-                    Console.Write(module ? "1" : " ");
+                    //Console.Write(module ? "1" : " ");
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
             }
 
 
