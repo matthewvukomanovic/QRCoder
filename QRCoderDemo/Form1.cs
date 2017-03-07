@@ -40,7 +40,6 @@ namespace QRCoderDemo
                 {
                     using (QRCode qrCode = new QRCode(qrCodeData))
                     {
-
                         pictureBoxQRCode.BackgroundImage = qrCode.GetGraphic(20, Color.Black, Color.White,
                             GetIconBitmap(), (int) iconSize.Value);
 
@@ -153,6 +152,17 @@ namespace QRCoderDemo
         private void comboBoxECC_SelectedIndexChanged(object sender, EventArgs e)
         {
             RenderQrCode();
+        }
+
+        private void buttonFillData_Click(object sender, EventArgs e)
+        {
+            var f = new FormAutoFill();
+            var d = f.ShowDialog();
+            var result = f.ResultText;
+            if (d == DialogResult.OK)
+            {
+                textBoxQRCode.Text = result;
+            }
         }
     }
 }
