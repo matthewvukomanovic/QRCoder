@@ -31,5 +31,17 @@ namespace QRCoderDemo
             ResultText = pg.ToString();
             this.DialogResult = DialogResult.OK;
         }
+
+        private void buttonUseOTP_Click(object sender, EventArgs e)
+        {
+            PayloadGenerator.OneTimePassword pg = new PayloadGenerator.OneTimePassword
+            {
+                Secret = "pwq6 5q55",
+                Issuer = "Google",
+                Label = "test@google.com",
+            };
+            ResultText = pg.ToString();
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

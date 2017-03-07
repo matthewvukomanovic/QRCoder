@@ -32,6 +32,7 @@
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.labelType = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonUseOtp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxType
@@ -65,11 +66,21 @@
             this.buttonSave.Text = "Use";
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // buttonUseOtp
+            // 
+            this.buttonUseOtp.Location = new System.Drawing.Point(447, 499);
+            this.buttonUseOtp.Name = "buttonUseOtp";
+            this.buttonUseOtp.Size = new System.Drawing.Size(75, 23);
+            this.buttonUseOtp.TabIndex = 5;
+            this.buttonUseOtp.Text = "Use OTP";
+            this.buttonUseOtp.Click += new System.EventHandler(this.buttonUseOTP_Click);
+            // 
             // FormAutoFill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 563);
+            this.Controls.Add(this.buttonUseOtp);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelType);
             this.Controls.Add(this.comboBoxType);
@@ -86,6 +97,7 @@
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonUseOtp;
     }
 }
 
