@@ -976,6 +976,12 @@ namespace QRCoderTests
             Assert.IsType<PayloadGenerator.Girocode.GirocodeException>(exception);
             exception.Message.ShouldBe("Message to the Girocode-User reader texts have to shorter than 71 chars.");
         }
+
+        [Fact]
+        [Category("PayloadGenerator/OneTimePassword")]
+        public void one_time_password_generator_generate()
+        {
+        }
     }
 }
 
