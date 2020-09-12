@@ -27,7 +27,14 @@ namespace QRCoderDemo
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            PayloadGenerator.WiFi pg = new PayloadGenerator.WiFi("wifiname", "Password", PayloadGenerator.WiFi.Authentication.WPA);
+
+            PayloadGenerator.WiFi.Authentication auth;
+            if( !Enum.TryParse<PayloadGenerator.WiFi.Authentication>(this.comboBoxType.Text, true, out auth))
+            {
+                auth = PayloadGenerator.WiFi.Authentication.nopass;
+            }
+
+            PayloadGenerator.WiFi pg = new PayloadGenerator.WiFi("wifiname", "Password", auth);
             ResultText = pg.ToString();
             this.DialogResult = DialogResult.OK;
         }
