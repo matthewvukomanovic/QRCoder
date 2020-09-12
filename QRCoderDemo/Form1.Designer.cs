@@ -40,6 +40,7 @@
             this.labelIconsize = new System.Windows.Forms.Label();
             this.iconSize = new System.Windows.Forms.NumericUpDown();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonFillData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconSize)).BeginInit();
             this.SuspendLayout();
@@ -162,11 +163,22 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // buttonFillData
+            // 
+            this.buttonFillData.Location = new System.Drawing.Point(40, 513);
+            this.buttonFillData.Name = "buttonFillData";
+            this.buttonFillData.Size = new System.Drawing.Size(75, 23);
+            this.buttonFillData.TabIndex = 11;
+            this.buttonFillData.Text = "Fill Data";
+            this.buttonFillData.UseVisualStyleBackColor = true;
+            this.buttonFillData.Click += new System.EventHandler(this.buttonFillData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 563);
+            this.Controls.Add(this.buttonFillData);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.iconSize);
             this.Controls.Add(this.labelIconsize);
@@ -203,6 +215,7 @@
         private System.Windows.Forms.Label labelIconsize;
         private System.Windows.Forms.NumericUpDown iconSize;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonFillData;
     }
 }
 

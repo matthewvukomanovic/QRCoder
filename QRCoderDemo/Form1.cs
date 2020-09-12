@@ -177,5 +177,16 @@ namespace QRCoderDemo
         {
             RenderQrCode();
         }
+
+        private void buttonFillData_Click(object sender, EventArgs e)
+        {
+            var f = new FormAutoFill();
+            var d = f.ShowDialog();
+            var result = f.ResultText;
+            if (d == DialogResult.OK)
+            {
+                textBoxQRCode.Text = result;
+            }
+        }
     }
 }
