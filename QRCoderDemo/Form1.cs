@@ -21,7 +21,7 @@ namespace QRCoderDemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxECC.SelectedIndex = 0; //Pre-select ECC level "L"
+            comboBoxECC.SelectedIndex = 3; //Pre-select ECC level "H"
             RenderQrCode();
         }
 
