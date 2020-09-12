@@ -63,7 +63,8 @@
             this.textBoxQRCode.Name = "textBoxQRCode";
             this.textBoxQRCode.Size = new System.Drawing.Size(394, 20);
             this.textBoxQRCode.TabIndex = 1;
-            this.textBoxQRCode.Text = "1234567890";
+            this.textBoxQRCode.Text = "https://tournaments.tennis.com.au/tournament/A62F42F1-17DE-424F-AE62-B4DEBB260C28" +
+    "";
             this.textBoxQRCode.TextChanged += new System.EventHandler(this.textBoxQRCode_TextChanged);
             // 
             // pictureBoxQRCode
