@@ -96,7 +96,7 @@ namespace QRCoderDemo
 
             // Displays a SaveFileDialog so the user can save the Image
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPeg Image|*.jpg|Gif Image|*.gif";
+            saveFileDialog1.Filter = "Svg Image|*.svg|Bitmap Image|*.bmp|PNG Image|*.png|JPeg Image|*.jpg|Gif Image|*.gif";
             saveFileDialog1.Title = "Save an Image File";
             saveFileDialog1.ShowDialog();
 
@@ -111,25 +111,48 @@ namespace QRCoderDemo
                     // NOTE that the FilterIndex property is one-based.
 
                     ImageFormat imageFormat = null;
+                    var save = true;
                     switch (saveFileDialog1.FilterIndex)
                     {
-                        case 1:
+                        case 2:
                             imageFormat = ImageFormat.Bmp;
                             break;
-                        case 2:
+                        case 3:
                             imageFormat = ImageFormat.Png;
                             break;
-                        case 3:
+                        case 4:
                             imageFormat = ImageFormat.Jpeg;
                             break;
-                        case 4:
+                        case 5:
                             imageFormat = ImageFormat.Gif;
+                            break;
+                        case 1:
+                            save = false;
+                            string level = comboBoxECC.SelectedItem.ToString();
+                            QRCodeGenerator.ECCLevel eccLevel = (QRCodeGenerator.ECCLevel)(level == "L" ? 0 : level == "M" ? 1 : level == "Q" ? 2 : 3);
+                            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+                            {
+                                using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(textBoxQRCode.Text, eccLevel))
+                                {
+                                    using (SvgQRCode qrCode = new SvgQRCode(qrCodeData))
+                                    {
+                                        using(var writer = new StreamWriter(fs))
+                                        {
+                                            var qrCodeAsSvg = qrCode.GetGraphic(20, Color.Black, Color.White);
+                                            writer.Write(qrCodeAsSvg);
+                                        }
+                                    }
+                                }
+                            }
                             break;
                         default:
                             throw new NotSupportedException("File extension is not supported");
                     }
 
-                    pictureBoxQRCode.BackgroundImage.Save(fs, imageFormat);
+                    if( save)
+                    {
+                        pictureBoxQRCode.BackgroundImage.Save(fs, imageFormat);
+                    }
                     fs.Close();
                 }
             }
